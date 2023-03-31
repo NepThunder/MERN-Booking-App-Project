@@ -10,5 +10,3 @@ adminRouter.get("/:id", getAdminByID);
 
 
 module.exports=adminRouter;
-
-// port chnaged 4000

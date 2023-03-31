@@ -59,7 +59,6 @@ const Booking=async(req,res,next)=>{
             message:"something Went Wrong"
         })
     }
-    console.log(newBooking);
     return res.status(201).json({newBooking});
     
 }

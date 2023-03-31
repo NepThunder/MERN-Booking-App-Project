@@ -1,6 +1,7 @@
 const user=require("../Models/User");
 const bcrypt=require("bcryptjs")
 const Bookings=require('../Models/Booking');
+
 const getallUser=async(req,res,next)=>{
     let users;
     try{
