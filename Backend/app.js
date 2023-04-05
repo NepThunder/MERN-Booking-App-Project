@@ -28,5 +28,5 @@ app.use('/booking',bookingRouter)
 
 
 app.listen(PORT,()=>{
-    console.log("SERVER RUNNING ON ${PORT}");
+    console.log(`SERVER RUNNING ON ${PORT}`);
 })
