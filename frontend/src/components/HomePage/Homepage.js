@@ -23,7 +23,7 @@ getAllMovies().then((data)=>setmovies(data.movies)).catch((err)=>console.log(err
 
  <Box padding={5} margin="auto">
     <Typography variant='h4' textAlign={"center"}>  
-    Latest Realse
+    Latest Release
     </Typography>
  </Box>
 

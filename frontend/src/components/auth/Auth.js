@@ -9,7 +9,7 @@ import AuthForm from './AuthForm'
 const Auth = () => {
   const navigate=useNavigate();
   const dispatch=useDispatch();
-  const onResponseRecived=(data)=>{
+  const onResponseReceived=(data)=>{
     console.log(data);
     dispatch(userActions.login());
     localStorage.setItem("userId",data.id);
@@ -18,7 +18,7 @@ const Auth = () => {
   const getData=(data)=>{
     console.log("Calling to",data);
     sendUserAuthRequest(data.inputs,data.signup)
-    .then(onResponseRecived)
+    .then(onResponseReceived)
     .catch(err=>{console.log(err)})
   };
   return (
