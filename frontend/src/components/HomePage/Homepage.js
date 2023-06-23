@@ -13,8 +13,8 @@ getAllMovies().then((data)=>setmovies(data.movies)).catch((err)=>console.log(err
    console.log(movies);
   return (
  <Box width={"100%"} height={"100%"} margin={"auto"} marginTop={2}>
- <Box margin={"auto"} width="70%" height={"40vh"} padding={2}>
-    <img src='https://www.filmibeat.com/fanimg/movie/15620/brahmastra-photos-images-76811.jpg' alt='Brahmastra' width={'100%'} height={'100%'}/>
+ <Box margin={"auto"} width="35%" height={"40vh"} padding={2}>
+    <img src='https://www.filmibeat.com/fanimg/movie/15620/brahmastra-photos-images-76811.jpg' alt='Brahmastra' style={{marginLeft:'25%'}} width={'50%'} height={'100%'}/>
  </Box>
 
 

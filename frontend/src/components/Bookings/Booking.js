@@ -110,7 +110,7 @@ const Booking = () => {
                                                 margin="normal"
                                                 variant='standard'
                                             />
-                                            <Button type='submit' sx={{ mt: 3 }}>
+                                            <Button type='submit' sx={{backgroundColor:"#000000",marginLeft:'200px',width:'200px',border:'1.5px solid black', mt: 3 }}>
                                                 Book Now
                                             </Button>
                                         </Box>
