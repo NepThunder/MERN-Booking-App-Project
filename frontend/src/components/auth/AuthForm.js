@@ -28,7 +28,7 @@ const AuthForm = ({ onSubmit, isAdmin }) => {
     }
 
     return (
-        <Dialog paperProps={{ style: { borderRadius: 20 } }} open={true}>
+        <Dialog paperProps={{ style: { backgroundColor:'black',borderRadius: 20 } }} open={true}>
             <Box sx={{ ml: 'auto', padding: 1 }}>
                 <IconButton LinkComponent={Link} to='/'>
                     <CloseRoundedIcon />
@@ -36,7 +36,7 @@ const AuthForm = ({ onSubmit, isAdmin }) => {
 
             </Box>
             <Typography variant='h4' textAlign={'center'}>
-                {isSignup ? 'Signup' : 'login'}
+                {isSignup ? 'Signup' : 'Login'}
             </Typography>
             <form onSubmit={handleSubmit}>
                 <Box display="flex" justifyContent={'center'} flexDirection='column' width={400} margin='auto' alignItems={'center'} padding={4}>
@@ -48,7 +48,7 @@ const AuthForm = ({ onSubmit, isAdmin }) => {
                     <TextField value={inputs.email} onChange={handleChange} variant='standard' margin='normal' type={'email'} name='email' />
                     <FormLabel sx={labelStyle}>Password</FormLabel>
                     <TextField value={inputs.password} onChange={handleChange} variant='standard' margin='normal' type={'password'} name='password' />
-                    <Button sx={{ mt: 2, borderRadius: 10, bgcolor: '#2b2d42' }} type="submit" fullWidth variant='contained'> {isSignup ? 'Signup' : 'login'} </Button>
+                    <Button sx={{ mt: 2, borderRadius: 10, bgcolor: '#2b2d42' }} type="submit" fullWidth variant='contained'> {isSignup ? 'Signup' : 'Login'} </Button>
                     {!isAdmin && (<Button onClick={() => {
                         setisSignup(!isSignup)
                     }} sx={{ mt: 2, borderRadius: 10 }} fullWidth > Switch To {isSignup ? "Login" : "Signup"}</Button>)}

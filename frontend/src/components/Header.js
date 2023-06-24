@@ -62,7 +62,7 @@ navigate(`/booking/${movie._id}`)
 
 { !isAdminLoggedIn && !isUserLoggedIn && <>
 
-  <Tab LinkComponent={Link} to='/auth' label="Auth"/>
+  <Tab LinkComponent={Link} to='/auth' label="User"/>
 <Tab LinkComponent={Link} to='/admin' label="Admin"/>
 </>
 }

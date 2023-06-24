@@ -15,21 +15,25 @@ const Userp = () => {
     console.log(bookings);
 
     const handleDelete=(id)=>{
-        deleteBooking(id).then((res)=> console.log(res)).catch((err)=>{console.log(err)});
+        deleteBooking(id).then((res)=> {
+            console.log(res);
+        window.alert("Movie deleted");
+        window.location.reload();
+    }).catch((err)=>{console.log(err)});
     }
   return (
     <Box width={'100%'} display='flex'>
 
      <Fragment>
    {User && (<Box flexDirection={'column'} justifyContent="center" alignItems={"center"} width={'30%'} padding={3}>
-                <AccountCircleIcon sx={{fontSize:'10rem',textAlign:"center" , ml:3}}/>
+                <AccountCircleIcon sx={{marginLeft:"120px",fontSize:'10rem',textAlign:"center" }}/>
                 <Typography padding={1} width={"auto"} textAlign={"center"} border={'1px solid #ccc'} borderRadius={6}> Name:{User.name}</Typography>
                 <Typography mt= {1} padding={1} width={"auto"} textAlign={"center"} border={'1px solid #ccc'} borderRadius={6}> Email:{User.email}</Typography>
             </Box> )}
 
            { bookings &&  (   <Box width={'70%'} display="flex" flexDirection={"column"}>
-                    <Typography variant='h3' fontFamily={"verdana"} textAlign="center" padding={2}>Bookings</Typography>
-                        <Box margin={'auto'} display="flex" flexDirection={'column'} width="80%">
+                    <Typography variant='h3' fontFamily={"verdana"} textAlign="center" padding={2}>Bookings List</Typography>
+                        <Box margin={'auto'} display="flex" flexDirection={'column'} width="80%" >
                             <List>
                                 {bookings.map((booking,index)=>
                                 

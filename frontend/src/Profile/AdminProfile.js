@@ -20,7 +20,7 @@ const AdminProfile = () => {
 
      <Fragment>
    {Admin && (<Box flexDirection={'column'} justifyContent="center" alignItems={"center"} width={'30%'} padding={3}>
-                <AccountCircleIcon sx={{fontSize:'10rem',textAlign:"center" , ml:3}}/>
+                <AccountCircleIcon sx={{fontSize:'10rem',textAlign:"center" ,marginLeft:"120px"}}/>
               
                 <Typography mt= {1} padding={1} width={"auto"} textAlign={"center"} border={'1px solid #ccc'} borderRadius={6}> Email:{Admin.email}</Typography>
             </Box> )}
