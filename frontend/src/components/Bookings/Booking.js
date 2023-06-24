@@ -29,17 +29,25 @@ const Booking = () => {
         console.log(inputs);
         newBooking({ ...inputs, movie: movie._id }).then((res) => {
             console.log(res);
-            window.alert('Movie Booked'); 
-            window.location.reload();
+            window.alert('Movie Booked. Go to Profile for booking lists');
+            // window.location.reload();
         }).catch((err) => console.log(err));
-        
+
 
     }
+    
     const getCurrentDate = () => {
         const today = new Date();
+        const maxDate = new Date();
+        maxDate.setDate(maxDate.getDate() + 21); // Add 14 days to the current date
+
         let day = today.getDate();
         let month = today.getMonth() + 1;
         const year = today.getFullYear();
+
+        let maxDay = maxDate.getDate();
+        let maxMonth = maxDate.getMonth() + 1;
+        const maxYear = maxDate.getFullYear();
 
         if (day < 10) {
             day = '0' + day;
@@ -49,10 +57,21 @@ const Booking = () => {
             month = '0' + month;
         }
 
-        return `${year}-${month}-${day}`;
+        if (maxDay < 10) {
+            maxDay = '0' + maxDay;
+        }
+
+        if (maxMonth < 10) {
+            maxMonth = '0' + maxMonth;
+        }
+
+        const currentDate = `${year}-${month}-${day}`;
+        const maxSelectableDate = `${maxYear}-${maxMonth}-${maxDay}`;
+
+        return { currentDate, maxSelectableDate };
     };
 
-
+    const { currentDate, maxSelectableDate } = getCurrentDate();
 
 
     return (
@@ -64,7 +83,7 @@ const Booking = () => {
                         fontFamily="fantasy"
                         variant='h4'
                         textAlign={'center'}
-                    >Book Tickets of movie:
+                    >Book Tickets of Movie:<br />
                         {movie.title}
                     </Typography>
 
@@ -76,13 +95,15 @@ const Booking = () => {
                             width="50%"
                             marginRight={"auto"}
                         >
-                            <img width="80%"
+                            <img width="50%"
                                 height={"300px"}
                                 src={movie.posterUrl}
                                 alt={movie.title}
+                                style={{ marginLeft: '50px' }}
                             />
 
                             <Box width={"80%"}
+                                style={{ marginLeft: '40px' }}
                                 marginTop={3}
                                 padding={2} >
                                 <Typography paddingTop={2}>
@@ -139,7 +160,8 @@ const Booking = () => {
                                         margin='normal'
                                         variant='standard'
                                         inputProps={{
-                                            min: getCurrentDate()
+                                            min: currentDate,
+                                            max: maxSelectableDate
                                         }}
                                     />
                                     <Button type='submit' sx={{ fontSize: "18px", color: 'black', backgroundColor: "#1F995C", marginLeft: '200px', width: '200px', border: '1.5px solid black', mt: 3 }}>

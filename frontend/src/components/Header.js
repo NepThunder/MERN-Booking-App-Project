@@ -38,7 +38,7 @@ navigate(`/booking/${movie._id}`)
 }
 };
   return (
-  <AppBar position="sticky" sx={{bgcolor:'#2b2b42'}}>
+  <AppBar position="sticky" sx={{bgcolor:'#315399'}}>
     <Toolbar>
   <Box width={"30%"}>
   <IconButton LinkComponent={Link} to="/">

@@ -18,7 +18,11 @@ const AddMovies = () => {
     const handleSubmit=(e)=>{
         e.preventDefault();
         console.log(inputs,actors);
-        addMovie({...inputs,actors}).then((res)=>console.log(res)).catch((err)=>console.log(err))
+        addMovie({...inputs,actors}).then((res)=>{console.log(res);
+        window.alert("Movie Added");
+        window.location.reload();
+        
+        }).catch((err)=>console.log(err))
     }
   return (
     <div>
