@@ -34,7 +34,6 @@ const AdminProfile = () => {
                                     <ListItem sx={{bgcolor:"#00d386",color:"white",textAlign:'center', margin:1,}}>
                                     <ListItemText sx={{margin:1,width:'auto',textAlign:"left"}}>Movie: {movie.title}</ListItemText>
                              
-                                    
                                    
                                     </ListItem>
                                 )}
